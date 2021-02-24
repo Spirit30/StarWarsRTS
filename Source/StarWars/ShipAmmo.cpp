@@ -1,0 +1,32 @@
+// Copyright Max Botvinev, 2021
+
+
+#include "ShipAmmo.h"
+
+#include "Kismet/GameplayStatics.h"
+
+void AShipAmmo::SetTargetActor(AActor* TargetParam)
+{
+	Target = TargetParam;
+	SetTarget(Target->GetActorLocation());
+}
+
+void AShipAmmo::DestroyAmmo()
+{
+	for(int i = 0; i < Explosions.Num(); ++i)
+	{
+		const auto Explosion = Explosions[i];
+		
+		UGameplayStatics ::SpawnEmitterAtLocation(
+			GetWorld(),
+			Explosion,
+			GetActorLocation(),
+			FRotator::ZeroRotator,
+			FVector(FMath::RandRange(MinExplosionScale, MaxExplosionScale)));
+	}
+
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Cast<USoundBase>(ExplosionSound), FVector::ZeroVector);
+	
+	Target->Destroy();
+	Destroy();
+}
