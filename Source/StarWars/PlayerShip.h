@@ -50,12 +50,16 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AActor> ShipAmmoClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float BoundRadius;
 	
 	APlayerShip();
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	void OnLeftMouseButton();
+	void OnEscapeButton();
 	void TryShootAll();
 	void ShootAll() const;
 	void Shoot(FVector SpawnStartLocation) const;
@@ -80,6 +84,7 @@ private:
 	FVector TargetLocation;
 	float TargetDistance;
 	FVector CurrentLocation;
+	float CurrentUpdateMinDistance;
 
 	void UpdateAimScreenLocation() const;
 	void UpdateLocationSmooth(float DeltaTime);

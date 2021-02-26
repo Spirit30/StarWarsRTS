@@ -12,39 +12,48 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/NavigationSystem/Private/NavigationSystem.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/UMG/Public/Blueprint/UserWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/AI/Navigation/NavigationTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Public/AI/Navigation/NavQueryFilter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/UMG/Public/Components/Button.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/NavigationSystem/Public/NavigationSystem.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Sound/SoundWave.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/Delegates/Delegate.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/UMG/Public/Components/Widget.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/NavigationSystem/Private/NavigationSystem.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/GenericPlatform/GenericPlatformMath.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Kismet/KismetMathLibrary.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/NavigationSystem/Public/NavigationSystem.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/HUD.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Controller.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/GameplayStatics.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Sound/SoundWave.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/World.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/UObject/WeakObjectPtrTemplates.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Source/StarWars/GameUtils.cpp" />
-      <option value="$PROJECT_DIR$/Source/StarWars/GameHUD.cpp" />
       <option value="$PROJECT_DIR$/Source/StarWars/StarWarsGameModeBase.cpp" />
-      <option value="$PROJECT_DIR$/Source/StarWars/StarWars.Build.cs" />
       <option value="$PROJECT_DIR$/Source/StarWars/EnemyUnitAI.cpp" />
-      <option value="$PROJECT_DIR$/Source/StarWars/GameController.cpp" />
       <option value="$PROJECT_DIR$/Source/StarWars/EnemyUnitAI.h" />
-      <option value="$PROJECT_DIR$/Source/StarWars/GameController.h" />
-      <option value="$PROJECT_DIR$/Source/StarWars/GameHUD.h" />
       <option value="$PROJECT_DIR$/Source/StarWars/GameUtils.h" />
       <option value="$PROJECT_DIR$/Source/StarWars/Ammo.h" />
       <option value="$PROJECT_DIR$/Source/StarWars/Ammo.cpp" />
+      <option value="$PROJECT_DIR$/Source/StarWars/StarWars.Build.cs" />
       <option value="$PROJECT_DIR$/Source/StarWars/EnemyUnit.h" />
       <option value="$PROJECT_DIR$/Source/StarWars/ShipAmmo.cpp" />
+      <option value="$PROJECT_DIR$/Source/StarWars/EnemyUnit.cpp" />
+      <option value="$PROJECT_DIR$/Source/StarWars/GameHUD.h" />
+      <option value="$PROJECT_DIR$/Source/StarWars/EnemyAmmo.h" />
+      <option value="$PROJECT_DIR$/Source/StarWars/EnemyAmmo.cpp" />
+      <option value="$PROJECT_DIR$/Source/StarWars/GameHUD.cpp" />
       <option value="$PROJECT_DIR$/Source/StarWars/ShipAmmo.h" />
       <option value="$PROJECT_DIR$/Source/StarWars/PlayerShip.h" />
       <option value="$PROJECT_DIR$/Source/StarWars/PlayerShip.cpp" />
-      <option value="$PROJECT_DIR$/Source/StarWars/EnemyUnit.cpp" />
+      <option value="$PROJECT_DIR$/Source/StarWars/GameController.h" />
+      <option value="$PROJECT_DIR$/Source/StarWars/GameController.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ol1aRZoDBWJnrXZrMTurJPl7dt" />

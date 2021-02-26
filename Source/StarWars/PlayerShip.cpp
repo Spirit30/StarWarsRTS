@@ -3,6 +3,7 @@
 #include "PlayerShip.h"
 
 #include "DrawDebugHelpers.h"
+#include "GameController.h"
 #include "GameUtils.h"
 #include "ShipAmmo.h"
 #include "Engine/EngineTypes.h"
@@ -28,7 +29,9 @@ void APlayerShip::BeginPlay()
 
 	GunMeshComponent = Cast<UStaticMeshComponent>(GameUtils::GetComponentByName(this, UStaticMesh::StaticClass(), GunsMeshComponentName));
 
-	CurrentLocation = FVector::UpVector * 1000;
+	TargetLocation = FVector(500, 500, 0);
+	CurrentLocation = FVector::ZeroVector;
+	ApplyLocation();
 }
 
 void APlayerShip::Tick(float DeltaTime)
@@ -62,6 +65,8 @@ void APlayerShip::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 
 	PlayerInputComponent->BindKey(EKeys::LeftMouseButton, IE_Pressed, this, &APlayerShip::OnLeftMouseButton);
+	PlayerInputComponent->BindKey(EKeys::Escape, IE_Pressed, this, &APlayerShip::OnEscapeButton);
+	PlayerInputComponent->BindKey(EKeys::Enter, IE_Pressed, this, &APlayerShip::OnEscapeButton);
 }
 
 void APlayerShip::UpdateAimScreenLocation() const
@@ -124,24 +129,41 @@ void APlayerShip::UpdateCamera() const
 
 void APlayerShip::OnLeftMouseButton()
 {
-	PlayerController->GetHitResultUnderCursor(ECC_Visibility, true, RefHitResult);
-
-	if (RefHitResult.IsValidBlockingHit())
+	if(!AGameController::GetInstance()->GetIsGameOver())
 	{
-		TargetLocation.X = RefHitResult.Location.X;
-		TargetLocation.Y = RefHitResult.Location.Y;
+		PlayerController->GetHitResultUnderCursor(ECC_Visibility, true, RefHitResult);
 
-		if(RefHitResult.Actor->ActorHasTag(FName(EnemyTargetTag)))
+		if (RefHitResult.IsValidBlockingHit())
 		{
-			if(TargetEnemy)
+			if(RefHitResult.Location.Size() < BoundRadius)
 			{
-				TargetEnemy->SetHighlighted(false);
-			}
+				TargetLocation.X =  RefHitResult.Location.X;
+				TargetLocation.Y = RefHitResult.Location.Y;
 
-			TargetEnemy = Cast<AEnemyUnit>(RefHitResult.Actor.Get());
-			TargetEnemy->SetHighlighted(true);
+				if(RefHitResult.Actor->ActorHasTag(FName(EnemyTargetTag)))
+				{
+					if(TargetEnemy)
+					{
+						TargetEnemy->SetHighlighted(false);
+					}
+
+					TargetEnemy = Cast<AEnemyUnit>(RefHitResult.Actor.Get());
+					TargetEnemy->SetHighlighted(true);
+
+					CurrentUpdateMinDistance = UpdateMinDistance;
+				}
+				else
+				{
+					CurrentUpdateMinDistance = 0;
+				}
+			}
 		}
 	}
+}
+
+void APlayerShip::OnEscapeButton()
+{
+	GameHUD->OnRestartButtonClick();
 }
 
 void APlayerShip::TryShootAll()

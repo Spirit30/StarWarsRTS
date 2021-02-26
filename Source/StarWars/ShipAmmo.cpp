@@ -2,13 +2,12 @@
 
 
 #include "ShipAmmo.h"
-
 #include "Kismet/GameplayStatics.h"
 
-void AShipAmmo::SetTargetActor(AActor* TargetParam)
+void AShipAmmo::SetTargetActor(AActor* TargetActor)
 {
-	Target = TargetParam;
-	SetTarget(Target->GetActorLocation());
+	TargetEnemy = Cast<AEnemyUnit>(TargetActor);
+	SetTarget(TargetEnemy->GetActorLocation());
 }
 
 void AShipAmmo::DestroyAmmo()
@@ -27,6 +26,6 @@ void AShipAmmo::DestroyAmmo()
 
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Cast<USoundBase>(ExplosionSound), FVector::ZeroVector);
 	
-	Target->Destroy();
+	TargetEnemy->Terminate();
 	Destroy();
 }

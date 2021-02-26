@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Ammo.h"
+#include "EnemyUnit.h"
+
 #include "ShipAmmo.generated.h"
 
 /**
@@ -28,7 +30,7 @@ class STARWARS_API AShipAmmo : public AAmmo
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USoundWave* ExplosionSound;
 	
-	void SetTargetActor(AActor* TargetParam);
+	void SetTargetActor(AActor* TargetActor);
 
 	protected:
 
@@ -36,5 +38,5 @@ class STARWARS_API AShipAmmo : public AAmmo
 
 	private:
 
-	AActor* Target;
+	AEnemyUnit* TargetEnemy;
 };

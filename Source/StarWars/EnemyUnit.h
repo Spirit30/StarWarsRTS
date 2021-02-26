@@ -23,6 +23,7 @@ class STARWARS_API AEnemyUnit : public APawn
 	
 	AEnemyUnit();
 	void SetHighlighted(bool Flag) const;
+	void Terminate();
 
 	protected:
 	
@@ -34,6 +35,7 @@ class STARWARS_API AEnemyUnit : public APawn
 	UStaticMeshComponent* HighlightComponent;
 	
 	float ShootTimer;
+	bool IsTerminated;
 	
 	void TryShoot(float DeltaTime);
 	void Shoot() const;

@@ -4,6 +4,7 @@
 
 #include "EnemyAmmo.h"
 #include "EnemyUnitAI.h"
+#include "GameController.h"
 #include "GameUtils.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -15,6 +16,17 @@ AEnemyUnit::AEnemyUnit()
 void AEnemyUnit::SetHighlighted(bool Flag) const
 {
 	HighlightComponent->SetHiddenInGame(!Flag);
+}
+
+void AEnemyUnit::Terminate()
+{
+	if(!IsTerminated)
+	{
+		AGameController::GetInstance()->OnDestroyUnit();
+		Destroy();
+	}
+	
+	IsTerminated = true;
 }
 
 void AEnemyUnit::BeginPlay()
@@ -42,6 +54,8 @@ void AEnemyUnit::Tick(float DeltaTime)
 		}
 	}
 }
+
+
 
 void AEnemyUnit::TryShoot(float DeltaTime)
 {
